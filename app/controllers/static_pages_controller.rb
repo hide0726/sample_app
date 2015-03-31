@@ -20,10 +20,15 @@ before_action :signed_in_user, only: [:bbs]
   def bbs
   end
 
-private
 
-   def signed_in_user
-      redirect_to signin_url, notice: "Please sign in." unless signed_in?
-   end
+  private
+ 
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Please sign in."
+      end
+    end
+
 
 end
