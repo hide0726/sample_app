@@ -1,0 +1,13 @@
+<h1> BBS </h1>
+
+
+<ul class="users">
+  <% Micropost.all.each do |micropost| %>
+  <% user = User.find_by(id: micropost.user_id) %>
+   <li>
+    <%= gravatar_for user, size: 52 %>
+    <%= link_to user.name, user %>
+    <%= micropost.content %>
+   </li>
+  <% end %>
+</ul>
