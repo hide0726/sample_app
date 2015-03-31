@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-
+before_action :signed_in_user, only: [:bbs]
 
   def home
     if signed_in?
@@ -19,5 +19,11 @@ class StaticPagesController < ApplicationController
 
   def bbs
   end
+
+private
+
+   def signed_in_user
+      redirect_to signin_url, notice: "Please sign in." unless signed_in?
+   end
 
 end
