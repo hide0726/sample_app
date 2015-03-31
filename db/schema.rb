@@ -11,14 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312140908) do
+ActiveRecord::Schema.define(version: 20150331055056) do
+
+  create_table "entries", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "micropost_id"
+    t.integer  "option"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "entries", ["user_id", "micropost_id", "created_at"], name: "index_entries_on_user_id_and_micropost_id_and_created_at"
 
   create_table "microposts", force: true do |t|
-    t.string   "content"
+    t.string   "title"
+    t.text     "content"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "posts", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "posts", ["category_id", "created_at"], name: "index_posts_on_category_id_and_created_at"
 
   create_table "users", force: true do |t|
     t.string   "name"

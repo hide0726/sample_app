@@ -1,0 +1,10 @@
+<li id="<%= bbs_item.id %>">
+  <%= link_to gravatar_for(bbs_item.user), bbs_item.user %>
+  <span class="user">
+    <%= link_to bbs_item.user.name, bbs_item.user %>
+  </span>
+  <span class="content"><%= link_to bbs_item.title, bbs_item  %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(bbs_item.created_at) %> ago.
+  </span>
+</li>

@@ -1,0 +1,19 @@
+<div class="hero-unit">
+<% user = User.find_by(id: @micropost.user_id) %>
+<%= gravatar_for user, size: 52 %>
+<%= link_to user.name, user %> 
+<%= @micropost.title %>
+<%= @micropost.content %>
+</div>
+
+
+<div class="hero-unit">  
+      <section>
+       <%= gravatar_for current_user, size: 52 %>
+        <%# render 'shared/user_info' %>
+      </section>  
+     <section>
+        <%= render 'shared/entry_form' %>  
+     </section>
+</div>
+

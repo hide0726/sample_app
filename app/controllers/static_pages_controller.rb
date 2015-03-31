@@ -18,6 +18,7 @@ before_action :signed_in_user, only: [:bbs]
   end
 
   def bbs
+   @microposts = Micropost.all.paginate(page: params[:page]) 
   end
 
 

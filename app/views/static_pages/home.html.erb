@@ -17,12 +17,8 @@
   </div>
 <% else %>
 
-
-
-
-
 <div class="center hero-unit">
-  <h1>Welcome to the Sample App</h1>
+  <h1>Welcome to the Sojin Nantoka</h1>
 
   <h2>
     ここは
@@ -30,7 +26,8 @@
     でつくったあざらしのホームページです。
   </h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  <%= link_to "アカウント登録", signup_path, class: "btn btn-large btn-primary" %>
+  <%= link_to "サインイン", signin_path, class: "btn btn-large btn-primary" %>
 </div>
 
 <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>

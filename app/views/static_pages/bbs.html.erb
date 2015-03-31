@@ -1,8 +1,15 @@
 <h1> BBS </h1>
 
+  <div class="users">
+        <%= render 'shared/bbs' %>
+  </div>
 
+
+
+
+<!--
 <ul class="users">
-  <% Micropost.all.each do |micropost| %>
+  <% @microposts.each do |micropost| %>
   <% user = User.find_by(id: micropost.user_id) %>
    <li>
     <%= gravatar_for user, size: 52 %>
@@ -11,3 +18,4 @@
    </li>
   <% end %>
 </ul>
+-->

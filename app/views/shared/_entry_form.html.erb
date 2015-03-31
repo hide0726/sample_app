@@ -1,0 +1,28 @@
+
+<%
+=begin
+%>
+
+<%= form_for(@micropost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_field :title, placeholder: "Write a title..." %>
+  </div>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>
+
+<%
+=end
+%>
+
+<%= form_for(@entry) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.hidden_field :micropost_id, :value => @micropost.id %>    
+    <%= f.select :option, [['参加', 0], ['興味あり', 1], ['参加できない', 2]] %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>
