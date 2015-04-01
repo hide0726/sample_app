@@ -12,6 +12,22 @@ class EntriesController < ApplicationController
   end
 
   def destroy
+   @entry = Entry.find(params[:id])
+   @entry.destroy
+   redirect_to Micropost.find_by(id: @entry.micropost_id)
+  end
+
+  def show
+  end
+ 
+  def update
+    @entry = Entry.find(params[:id])
+    if @entry.update_attributes(entry_params)
+      flash[:success] = "Entry updated!"
+      redirect_to Micropost.find_by(id: @entry.micropost_id)
+    else
+      redirect_to Micropost.find_by(id: @entry.micropost_id)
+    end
   end
 
  private
