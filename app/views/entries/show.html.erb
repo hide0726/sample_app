@@ -1,0 +1,6 @@
+<% @entry = Entry.find(params[:id]) %>
+<%= gravatar_for @entry.user, size:52 %>
+登録情報:
+<%= "参加" if @entry.option == 0 %>
+<%= "興味あり" if @entry.option == 1 %>
+<%= "参加できない" if @entry.option == 2 %>

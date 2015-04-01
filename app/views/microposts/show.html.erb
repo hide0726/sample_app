@@ -1,19 +1,71 @@
 <div class="hero-unit">
-<% user = User.find_by(id: @micropost.user_id) %>
-<%= gravatar_for user, size: 52 %>
-<%= link_to user.name, user %> 
-<%= @micropost.title %>
-<%= @micropost.content %>
+ <% user = User.find_by(id: @micropost.user_id) %>
+ <%= gravatar_for user, size: 52 %>
+ <%= link_to user.name, user %> 
+ <%= @micropost.title %>
+ <%= @micropost.content %>
 </div>
 
 
-<div class="hero-unit">  
-      <section>
-       <%= gravatar_for current_user, size: 52 %>
-        <%# render 'shared/user_info' %>
-      </section>  
-     <section>
-        <%= render 'shared/entry_form' %>  
-     </section>
+<div class="hero-unit">
+ <section>
+ <h4>参加(<%= @entries.where(option: 0).count %>)</h4>
+ <ol class= "microposts"> 
+ <% @entries.where(option: 0).each do |entry|  %>
+  <li> 
+  <%= gravatar_for entry.user, size: 52 %>
+   <%= link_to entry.user.name, user %>
+   <% if current_user?(entry.user) %>
+    <%= link_to "delete", entry, method: :delete, 
+                     data: {confirm: "You sure?"} %>
+   <% end %>
+  </li>
+  <% end %>
+ </ol>
+ </section>
+
+ <section>
+ <h4>興味あり(<%= @entries.where(option: 1).count %>)</h4>
+ <ol class= "microposts">
+  <%  @entries.where(option: 1).each do |entry| %>
+   <li>
+   <%= gravatar_for entry.user, size: 52 %>
+   <%= link_to entry.user.name, user %>
+   <% if current_user?(entry.user) %>
+    <%= link_to "delete", entry, method: :delete,
+                     data: {confirm: "You sure?"} %>
+   <% end %>
+   </li>
+  <% end %>
+ </ol>
+ </section>
+
+<section>
+<h4>参加できない(<%= @entries.where(option: 2).count %>)</h4>
+<ol class= "microposts">
+ <% @entries.where(option: 2).each do |entry| %>
+  <li>
+  <%= gravatar_for entry.user, size: 52 %>
+  <%= link_to entry.user.name, user %>
+  <% if current_user?(entry.user) %>
+    <%= link_to "delete", entry, method: :delete,
+                     data: {confirm: "You sure?"} %>
+  <% end %>
+ <% end %>
+ </li>
+ </ol>
+ </section>
 </div>
+
+<%  if @entries.find_by(user_id: current_user.id).present? %>
+  <div class="hero-unit">
+  <%= gravatar_for current_user, size: 52 %>
+  <%= render 'shared/entry_edit_form' %>
+ </div>
+<% else %>
+ <div class="hero-unit">  
+  <%= gravatar_for current_user, size: 52 %>
+  <%= render 'shared/entry_form' %>  
+ </div>
+<% end %>
 

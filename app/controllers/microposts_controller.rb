@@ -21,7 +21,7 @@ class MicropostsController < ApplicationController
   def show
    @micropost = Micropost.find(params[:id])
    @entry = current_user.entries.build
-#   @entries = @micropost.entries
+   @entries = @micropost.entries
   end
 
  private
