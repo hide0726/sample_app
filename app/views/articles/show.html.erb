@@ -1,0 +1,15 @@
+<div class="hero-unit">
+ <%= @article.title %>
+ <%= @article.abstract %>
+ <%= @article.content %>
+ <% if @article.category_id == 0 %>
+  <%= p "一回生向け" %>
+ <% end %>
+ <% if @article.category_id == 1 %>
+  <%= p "Sojin Voice" %>
+ <% end %>
+ <% if @article.category_id == 2 %>
+  <%= p "その他" %>
+ <% end %>
+</div>
+
