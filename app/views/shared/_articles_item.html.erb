@@ -1,0 +1,9 @@
+<li id="<%= articles_item.id %>">
+ <span class="content"><%= articles_item.title %></span>
+ <span class="content"><%= articles_item.abstract %></span>
+ <%= link_to "続きを読む", articles_item %></span>
+ <span class="timestamp">
+  Posted <%= time_ago_in_words(articles_item.created_at) %> ago.
+  </span>
+</li>
+

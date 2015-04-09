@@ -21,6 +21,9 @@ before_action :signed_in_user, only: [:bbs]
    @microposts = Micropost.all.paginate(page: params[:page]) 
   end
 
+  def articles
+   @articles = Post.all.paginate(page: params[:page])
+  end
 
   private
  

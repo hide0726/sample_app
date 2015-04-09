@@ -3,7 +3,10 @@
   <span class="user">
     <%= link_to bbs_item.user.name, bbs_item.user %>
   </span>
-  <span class="content"><%= link_to bbs_item.title, bbs_item  %></span>
+  <span class="content">
+  <b> <%= bbs_item.title  %> </b>
+   <%= link_to "続きを読む", bbs_item  %> 
+  </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(bbs_item.created_at) %> ago.
   </span>

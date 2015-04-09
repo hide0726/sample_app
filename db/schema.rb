@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150331055056) do
 
   create_table "posts", force: true do |t|
     t.string   "title"
+    t.text     "abstract"
     t.text     "content"
     t.integer  "category_id"
     t.datetime "created_at"
