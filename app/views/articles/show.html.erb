@@ -1,4 +1,4 @@
-<% if @article.public == 1 or current_user.admin?  %>
+<% if @article.koukai == 1 or current_user.admin?  %>
   <% if (@article.gentei == 1) && !signed_in?  %>
    <% session[:return_to] = request.original_url %>
    <h4>こちらはユーザー限定公開記事です。

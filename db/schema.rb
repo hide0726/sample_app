@@ -18,13 +18,13 @@ ActiveRecord::Schema.define(version: 20150409143221) do
     t.text     "abstract"
     t.text     "content"
     t.integer  "category_id"
-    t.integer  "public"
+    t.integer  "koukai"
     t.integer  "gentei"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "articles", ["category_id", "public", "created_at"], name: "index_articles_on_category_id_and_public_and_created_at"
+  add_index "articles", ["category_id", "koukai", "created_at"], name: "index_articles_on_category_id_and_koukai_and_created_at"
 
   create_table "entries", force: true do |t|
     t.integer  "user_id"

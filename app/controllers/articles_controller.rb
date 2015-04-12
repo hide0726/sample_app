@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
- before_action :admin_user,     only: [:new, :edit, :destroy]
+ before_action :signed_in_user, only: [:new, :edit, :update, :destroy]
+ before_action :admin_user,     only: [:new, :edit, :update, :destroy]
 
  def new
   @article = Article.new
@@ -40,7 +41,7 @@ class ArticlesController < ApplicationController
  end
 
  def index
-  @articles = Article.where(public: 1).paginate(page: params[:page])
+  @articles = Article.where(koukai: 1).paginate(page: params[:page])
  end
 
  
@@ -54,7 +55,7 @@ class ArticlesController < ApplicationController
  private
 
  def article_params
-  params.require(:article).permit(:title, :abstract, :content, :category_id, :public, :gentei)
+  params.require(:article).permit(:title, :abstract, :content, :category_id, :koukai, :gentei)
  end
 
  def admin_user
