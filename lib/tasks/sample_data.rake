@@ -8,10 +8,10 @@ namespace :db do
 end
 
 def make_users
-  admin = User.create!(name: "Example User",
-                       email: "example@railstutorial.jp",
-                       password: "foobar",
-                       password_confirmation: "foobar",
+  admin = User.create!(name: "あざらし",
+                       email: "hide-0726@hotmail.co.jp",
+                       password: "mofumofu",
+                       password_confirmation: "mofumofu",
                        admin: true)
   99.times do |n|
     name  = Faker::Name.name

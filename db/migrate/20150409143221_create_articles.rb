@@ -5,9 +5,11 @@ class CreateArticles < ActiveRecord::Migration
       t.text :abstract
       t.text :content
       t.integer :category_id
+      t.integer :public
+      t.integer :gentei
 
       t.timestamps
     end
-    add_index :articles, [:category_id, :created_at]
+    add_index :articles, [:category_id, :public, :created_at]
   end
 end

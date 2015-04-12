@@ -4,6 +4,12 @@
  <%= link_to user.name, user %> 
  <%= @micropost.title %>
  <%= @micropost.content %>
+ <% if current_user?(@micropost.user) %>
+  <%= link_to "edit", edit_micropost_path(params[:id]) %>
+  <%= link_to "delete", @micropost, method: :delete,
+         data: { confirm: "You sure?" }, title: @micropost.content %>
+ <% end %>
+
 </div>
 
 

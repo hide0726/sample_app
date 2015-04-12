@@ -1,15 +1,30 @@
-<div class="hero-unit">
- <%= @article.title %>
- <%= @article.abstract %>
- <%= @article.content %>
- <% if @article.category_id == 0 %>
-  <%= p "一回生向け" %>
- <% end %>
- <% if @article.category_id == 1 %>
-  <%= p "Sojin Voice" %>
- <% end %>
- <% if @article.category_id == 2 %>
-  <%= p "その他" %>
- <% end %>
-</div>
-
+<% if @article.public == 1 or current_user.admin?  %>
+  <% if (@article.gentei == 1) && !signed_in?  %>
+   <% session[:return_to] = request.original_url %>
+   <h4>こちらはユーザー限定公開記事です。
+　 <%= link_to "サインイン", signin_path %>か<%= link_to "ユーザー登録", signup_path %>をしてください。</h4>
+  <% else %>
+   <div class="hero-unit">
+   <%= @article.title %>
+   <%= @article.abstract %>
+   <%= @article.content %>
+    <% case %>
+    <% when @article.category_id == 0 %>
+     <%= p "一回生向け" %>
+    <% when @article.category_id == 1 %>
+     <%= p "Sojin Voice" %>
+    <% else @article.category_id == 2 %>
+     <%= p "その他" %>
+    <% end %>
+    <% if signed_in? && current_user.admin? %>
+     <%= link_to "edit", edit_article_path(params[:id]) %>
+     <%= link_to "delete", @article, method: :delete,
+                      data: {confirm: "You sure?"} %>
+    <% end %>
+  <% end %>
+ </div>
+<% else %>
+ <div class="hero-unit">
+ <h3>この記事は非公開です。</h3>
+ </div>
+<% end %>

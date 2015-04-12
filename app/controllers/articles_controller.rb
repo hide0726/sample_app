@@ -1,8 +1,12 @@
 class ArticlesController < ApplicationController
-
+ before_action :admin_user,     only: [:new, :edit, :destroy]
 
  def new
   @article = Article.new
+ end
+
+ def edit
+  @article = Article.find(params[:id])
  end
 
  def create
@@ -31,19 +35,31 @@ class ArticlesController < ApplicationController
    flash[:success] = "Article updated!"
    redirect_to @article
   else
-   redirect_to @article
+   render 'edit'
   end
  end
 
  def index
-  @articles = Article.paginate(page: params[:page])
+  @articles = Article.where(public: 1).paginate(page: params[:page])
  end
+
  
+#def category
+#  @articles = Article.where(public: 1)
+#  @categorized_articles_0 = @articles.where(public: 0).paginate(page: params[:page])
+#  @categorized_articles_1 = @articles.where(public: 1).paginate(page: params[:page])
+#  @categorized_articles_2 = @articles.where(public: 2).paginate(page: params[:page])
+# end 
 
  private
 
  def article_params
-  params.require(:article).permit(:title, :abstract, :content, :category_id)
+  params.require(:article).permit(:title, :abstract, :content, :category_id, :public, :gentei)
  end
+
+ def admin_user
+  redirect_to(root_path) unless current_user.admin?
+ end
+
 
 end
