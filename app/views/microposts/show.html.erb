@@ -19,7 +19,7 @@
  <ol class= "microposts"> 
  <% @entries.where(option: 0).each do |entry|  %>
   <li> 
-  <%= gravatar_for entry.user, size: 52 %>
+  <%= gravatar_for entry.user, size: 32 %>
    <%= link_to entry.user.name, user %>
    <% if current_user?(entry.user) %>
     <%= link_to "delete", entry, method: :delete, 
@@ -35,7 +35,7 @@
  <ol class= "microposts">
   <%  @entries.where(option: 1).each do |entry| %>
    <li>
-   <%= gravatar_for entry.user, size: 52 %>
+   <%= gravatar_for entry.user, size: 32 %>
    <%= link_to entry.user.name, user %>
    <% if current_user?(entry.user) %>
     <%= link_to "delete", entry, method: :delete,
@@ -51,7 +51,7 @@
 <ol class= "microposts">
  <% @entries.where(option: 2).each do |entry| %>
   <li>
-  <%= gravatar_for entry.user, size: 52 %>
+  <%= gravatar_for entry.user, size: 32 %>
   <%= link_to entry.user.name, user %>
   <% if current_user?(entry.user) %>
     <%= link_to "delete", entry, method: :delete,

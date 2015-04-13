@@ -10,11 +10,11 @@
    <%= @article.content %>
     <% case %>
     <% when @article.category_id == 0 %>
-     <%= p "一回生向け" %>
+     <%= link_to "#一回生向け", '/categories/1' %>
     <% when @article.category_id == 1 %>
-     <%= p "Sojin Voice" %>
+     <%= link_to "#Sojin Voice", '/categories/2' %>
     <% else @article.category_id == 2 %>
-     <%= p "その他" %>
+     <%= link_to "#その他", '/categories/3' %>
     <% end %>
     <% if signed_in? && current_user.admin? %>
      <%= link_to "edit", edit_article_path(params[:id]) %>

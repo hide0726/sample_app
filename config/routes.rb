@@ -4,6 +4,7 @@ SampleApp::Application.routes.draw do
   resources :microposts
   resources :entries
   resources :articles
+  resources :categories
   root 'static_pages#home'
   match '/signup',   to:'users#new',              via:'get'
   match '/signin',   to:'sessions#new',           via:'get'
