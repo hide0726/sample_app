@@ -1,10 +1,10 @@
 <% case %>
- <% when Category.find(params[:id]).id == 0 %>
-  <% @categorized_articles = @categorized_articles_0 %>
  <% when Category.find(params[:id]).id == 1 %>
   <% @categorized_articles = @categorized_articles_1 %>
- <% else %>
+ <% when Category.find(params[:id]).id == 2 %>
   <% @categorized_articles = @categorized_articles_2 %>
+ <% else %>
+  <% @categorized_articles = @categorized_articles_3 %>
 <% end %> 
 
 <% if @categorized_articles.any? %>

@@ -40,9 +40,9 @@ before_action :admin_user, only: [:new, :create, :edit, :destroy]
  def show
  @category = Category.find(params[:id])
  @articles = Article.where(koukai: 1)
-  @categorized_articles_0 = @articles.where(category_id: 0).paginate(page: params[:page])
   @categorized_articles_1 = @articles.where(category_id: 1).paginate(page: params[:page])
   @categorized_articles_2 = @articles.where(category_id: 2).paginate(page: params[:page])
+  @categorized_articles_3 = @articles.where(category_id: 3).paginate(page: params[:page])
  end
 
  private
