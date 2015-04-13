@@ -9,11 +9,11 @@
    <%= @article.abstract %>
    <%= @article.content %>
     <% case %>
-    <% when @article.category_id == 0 %>
-     <%= link_to "#一回生向け", '/categories/1' %>
     <% when @article.category_id == 1 %>
+     <%= link_to "#一回生向け", '/categories/1' %>
+    <% when @article.category_id == 2 %>
      <%= link_to "#Sojin Voice", '/categories/2' %>
-    <% else @article.category_id == 2 %>
+    <% else @article.category_id == 3 %>
      <%= link_to "#その他", '/categories/3' %>
     <% end %>
     <% if signed_in? && current_user.admin? %>
