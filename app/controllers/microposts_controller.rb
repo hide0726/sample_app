@@ -1,5 +1,5 @@
 class MicropostsController < ApplicationController
-  before_action :signed_in_user, only: [:create, :destroy]
+  before_action :signed_in_user, only: [:create, :show, :destroy]
   before_action :correct_user,   only: [:edit, :destroy]
 
   def create
@@ -35,6 +35,8 @@ class MicropostsController < ApplicationController
    @micropost = Micropost.find(params[:id])
    @entry = current_user.entries.build
    @entries = @micropost.entries
+   @comment = current_user.comments.build
+   @comments = @micropost.comments
   end
 
  private

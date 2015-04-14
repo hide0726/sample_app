@@ -2,13 +2,13 @@
  <% user = User.find_by(id: @micropost.user_id) %>
  <%= gravatar_for user, size: 52 %>
  <%= link_to user.name, user %> 
- <%= @micropost.title %>
- <%= @micropost.content %>
- <% if current_user?(@micropost.user) %>
+ <h4><%= @micropost.title %></h4>
+ <%= simple_format(h(@micropost.content)) %>
+ <p><% if current_user?(@micropost.user) %>
   <%= link_to "edit", edit_micropost_path(params[:id]) %>
   <%= link_to "delete", @micropost, method: :delete,
          data: { confirm: "You sure?" }, title: @micropost.content %>
- <% end %>
+ <% end %></p>
 
 </div>
 
@@ -60,6 +60,27 @@
  <% end %>
  </li>
  </ol>
+ </section>
+</div>
+
+<div class="hero-unit">
+ <section>
+ <h4>Comments</h4>
+ <ol class= "microposts">
+ <% @comments.each do |comment|  %>
+  <li>
+  <%= gravatar_for comment.user, size: 32 %>
+   <%= link_to comment.user.name, user %>
+   <%= comment.content %>
+   <% if current_user?(comment.user) %>  
+    <%= link_to "delete", comment, method: :delete,
+                     data: {confirm: "You sure?"} %>
+   <% end %>
+  </li>
+  <% end %>
+ </ol>
+  <%= gravatar_for current_user, size: 52 %>
+  <%= render 'shared/comment_form' %>
  </section>
 </div>
 
