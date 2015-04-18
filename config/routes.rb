@@ -6,7 +6,7 @@ SampleApp::Application.routes.draw do
   resources :comments
   resources :articles
   resources :categories
-  resources :messages
+#resources :messages
   resources :profiles
   resources :subemails
   root 'static_pages#home'
