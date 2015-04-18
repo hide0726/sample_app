@@ -1,4 +1,3 @@
-<% provide(:title, @user.name) %>
 <div class="row">
   <aside class="span4">
     <section>
@@ -10,6 +9,7 @@
   </aside>
 
   <%= render 'shared/user_profile' %>
+  <%= render 'shared/subemails' %> 
 
   <div class="span8">
     <% if @user.microposts.any? %>
@@ -21,3 +21,4 @@
     <% end %>
   </div>
 </div>
+

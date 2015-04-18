@@ -14,13 +14,14 @@
 
 
 <div class="hero-unit">
- <section>
+ <div class="entries">
+ <div class="entry01">
  <h4>参加(<%= @entries.where(option: 0).count %>)</h4>
  <ol class= "microposts"> 
  <% @entries.where(option: 0).each do |entry|  %>
   <li> 
   <%= gravatar_for entry.user, size: 32 %>
-   <%= link_to entry.user.name, user %>
+   <%= link_to entry.user.name, entry.user %>
    <% if current_user?(entry.user) %>
     <%= link_to "delete", entry, method: :delete, 
                      data: {confirm: "You sure?"} %>
@@ -28,15 +29,15 @@
   </li>
   <% end %>
  </ol>
- </section>
+ </div>
 
- <section>
+ <div class="entry01">
  <h4>興味あり(<%= @entries.where(option: 1).count %>)</h4>
  <ol class= "microposts">
   <%  @entries.where(option: 1).each do |entry| %>
    <li>
    <%= gravatar_for entry.user, size: 32 %>
-   <%= link_to entry.user.name, user %>
+   <%= link_to entry.user.name, entry.user %>
    <% if current_user?(entry.user) %>
     <%= link_to "delete", entry, method: :delete,
                      data: {confirm: "You sure?"} %>
@@ -44,24 +45,23 @@
    </li>
   <% end %>
  </ol>
- </section>
+ </div>
 
-<section>
-<h4>参加できない(<%= @entries.where(option: 2).count %>)</h4>
-<ol class= "microposts">
+ <h4>参加できない(<%= @entries.where(option: 2).count %>)</h4>
+ <ol class= "microposts">
  <% @entries.where(option: 2).each do |entry| %>
   <li>
   <%= gravatar_for entry.user, size: 32 %>
-  <%= link_to entry.user.name, user %>
+  <%= link_to entry.user.name, entry.user %>
   <% if current_user?(entry.user) %>
     <%= link_to "delete", entry, method: :delete,
                      data: {confirm: "You sure?"} %>
   <% end %>
  <% end %>
  </li>
- </ol>
- </section>
-</div>
+ </ol> 
+ </div>
+</div> 
 
 <div class="hero-unit">
  <section>

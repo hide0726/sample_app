@@ -1,0 +1,6 @@
+<% if @message_feed_items.any? %>
+  <ol class="microposts">
+    <%= render partial: 'shared/massage_feed_item', collection: @message_feed_items %>
+  </ol>
+  <%= will_paginate @message_feed_items %>
+<% end %>

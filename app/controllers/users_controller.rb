@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+    @profile = @user.profile
+    @sub_email = @user.subemail
   end
 
   def new
@@ -22,7 +24,7 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
-      redirect_to @user
+      redirect_to mypage_path
     else
       render 'edit'
     end
@@ -33,7 +35,7 @@ class UsersController < ApplicationController
    if @user.save
      sign_in @user
      flash[:success] = "Welcome to the Sample App!"
-     redirect_back_or @user
+     redirect_back_or mypage_path
    else
     render 'new'
    end
@@ -49,8 +51,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation,)
   end
 
 

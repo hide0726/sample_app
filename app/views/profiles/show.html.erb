@@ -1,0 +1,10 @@
+<div class="note">
+<div class="ttl"><h1>プロフィール</h1></div>
+ <p>名前： <%= @user.name %></p>
+ <p>身分(回生・教員等)： <%= @profile.shozoku if @profile.shozoku.present? %></p>
+ <p>学系：<%= @profile.gakukei if @profile.gakukei.present? %></p>
+ <p>自己紹介：<%= @profile.self_intro if  @profile.self_intro.present? %></p>
+ <p><% if current_user?(@user) %>
+  <%= link_to "edit", edit_profile_path(params[:id]) %>
+ <% end %></p>
+</div>

@@ -1,0 +1,14 @@
+<div class="note">
+<div class="ttl"><h1>登録メールアドレス</h1></div>
+ <p>アドレス：<%= @user.email %>
+ <% if @sub_email.nil? %>
+  <p>サブアドレス：未登録</p>
+  <%= link_to "edit", new_subemail_path %>
+ <% else %>
+  <p>サブアドレス：<%= @sub_email if @sub_email.present? %></p>
+  <p>
+  <% if current_user?(@user) %>
+   <%= link_to "edit", edit_subemail_path(params[:id]) %>
+  <% end %></p>
+ <% end %>
+</div>

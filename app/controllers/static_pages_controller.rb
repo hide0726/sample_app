@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
 before_action :signed_in_user, only: [:bbs]
 
+
   def home
     if signed_in?
       @micropost  = current_user.microposts.build
@@ -25,6 +26,13 @@ before_action :signed_in_user, only: [:bbs]
    @articles = Post.all.paginate(page: params[:page])
   end
 
+  def mypage
+    @user = current_user
+    @microposts = @user.microposts.paginate(page: params[:page])
+    @profile = @user.profile
+    @sub_email = @user.subemail
+  end
+
   private
  
     def signed_in_user
@@ -33,6 +41,5 @@ before_action :signed_in_user, only: [:bbs]
         redirect_to signin_url, notice: "Please sign in."
       end
     end
-
 
 end

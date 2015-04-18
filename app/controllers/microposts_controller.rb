@@ -1,6 +1,6 @@
 class MicropostsController < ApplicationController
   before_action :signed_in_user, only: [:create, :show, :destroy]
-  before_action :correct_user,   only: [:edit, :destroy]
+  before_action :correct_user,   only: [:destroy]
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
@@ -11,9 +11,6 @@ class MicropostsController < ApplicationController
       @feed_items = []
       render 'static_pages/home'
     end
-  end
-
-  def edit
   end
 
   def update

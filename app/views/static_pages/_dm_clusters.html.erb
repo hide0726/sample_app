@@ -1,0 +1,7 @@
+<% if @messages.any? %>
+  <ol class="microposts">
+    <%= render partial: 'shared/dm_cluster_item', collection: @dm_clusters %>
+  </ol>
+  <%= will_paginate @dm_clusters %>
+<% end %>
+

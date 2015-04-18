@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@sub_email) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :sub_email %>
+      <%= f.text_field :sub_email %>
+
+      <%= f.submit "登録", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

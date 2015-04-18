@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@profile) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :shozoku %>
+      <%= f.text_field :shozoku %>
+
+      <%= f.label :gakukei %>
+      <%= f.text_field :gakukei %>
+
+      <%= f.label :self_intro %>
+      <%= f.text_area :self_intro %>
+
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+      <% end %>
+
+ </div>
+</div>

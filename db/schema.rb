@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414121107) do
+ActiveRecord::Schema.define(version: 20150418144002) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150414121107) do
     t.integer  "gentei"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   add_index "articles", ["category_id", "koukai", "created_at"], name: "index_articles_on_category_id_and_koukai_and_created_at"
@@ -50,6 +51,16 @@ ActiveRecord::Schema.define(version: 20150414121107) do
 
   add_index "entries", ["user_id", "micropost_id", "created_at"], name: "index_entries_on_user_id_and_micropost_id_and_created_at"
 
+  create_table "messages", force: true do |t|
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "messages", ["sender_id", "receiver_id", "created_at"], name: "index_messages_on_sender_id_and_receiver_id_and_created_at"
+
   create_table "microposts", force: true do |t|
     t.string   "title"
     t.text     "content"
@@ -68,6 +79,22 @@ ActiveRecord::Schema.define(version: 20150414121107) do
   end
 
   add_index "posts", ["category_id", "created_at"], name: "index_posts_on_category_id_and_created_at"
+
+  create_table "profiles", force: true do |t|
+    t.string   "shozoku"
+    t.string   "gakukei"
+    t.text     "self_intro"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "subemails", force: true do |t|
+    t.string   "sub_email"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

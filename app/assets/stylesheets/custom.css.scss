@@ -1,4 +1,4 @@
-@import "bootstrap";
+@import 'bootstrap';
 
 /* mixins, variables, etc. */
 
@@ -18,6 +18,12 @@ html {
 
 body {
   padding-top: 60px;
+/*  background-image: url(hiroba.JPG); */
+}
+
+.inner-body {
+ padding-top: 60px;
+ background-color: rgba(255,255,255, 0.90);
 }
 
 section {
@@ -219,3 +225,412 @@ aside {
     margin-bottom: 5px;
   }
 }
+
+
+/* 自分で編集したnavbar-inverse2 */
+
+.navbar-inverse2 .navbar-inner {
+  background-color: #00CCFF;
+  background-image: -moz-linear-gradient(top, #00CCFF, #66CCFF);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#00CCFF), to(#66CCFF));
+  background-image: -webkit-linear-gradient(top, #00CCFF, #66CCFF);
+  background-image: -o-linear-gradient(top, #00CCFF, #66CCFF);
+  background-image: linear-gradient(to bottom, #00CCFF, #66CCFF);
+  background-repeat: repeat-x;
+  border-color: #00CCFF;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00CCFF', endColorstr='#ff66CCFF', GradientType=0);
+}
+
+.navbar-inverse2 .brand,
+.navbar-inverse2 .nav > li > a {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.navbar-inverse2 .brand:hover,
+.navbar-inverse2 .nav > li > a:hover,
+.navbar-inverse2 .brand:focus,
+.navbar-inverse2 .nav > li > a:focus {
+  color: #ffff55;
+}
+
+.navbar-inverse2 .brand {
+  color: #ffffff;
+}
+
+.navbar-inverse2 .navbar-text {
+  color: #ffffff;
+}
+
+.navbar-inverse2 .navbar-search .search-query:-moz-placeholder {
+  color: #99ccff;
+}
+
+.navbar-inverse2 .navbar-search .search-query:-ms-input-placeholder {
+  color: #99ccff;
+}
+
+.navbar-inverse2 .navbar-search .search-query::-webkit-input-placeholder {
+  color: #99ccff;
+}
+
+/* 自分で編集したdropdown-toggle2 */
+
+.btn-group .dropdown-toggle2:active,
+.btn-group.open .dropdown-toggle2 {
+  outline: 0;
+}
+
+.btn-group > .btn + .dropdown-toggle2 {
+  *padding-top: 5px;
+  padding-right: 8px;
+  *padding-bottom: 5px;
+  padding-left: 8px;
+  -webkit-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.125), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-group > .btn-mini + .dropdown-toggle2 {
+  *padding-top: 2px;
+  padding-right: 5px;
+  *padding-bottom: 2px;
+  padding-left: 5px;
+}
+
+.btn-group > .btn-small + .dropdown-toggle2 {
+  *padding-top: 5px;
+  *padding-bottom: 4px;
+}
+
+.btn-group > .btn-large + .dropdown-toggle2 {
+  *padding-top: 7px;
+  padding-right: 12px;
+  *padding-bottom: 7px;
+  padding-left: 12px;
+}
+
+.btn-group.open .dropdown-toggle2 {
+  background-image: none;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-group.open .btn.dropdown-toggle2 {
+  background-color: #e6e6e6;
+}
+
+.btn-group.open .btn-primary.dropdown-toggle2 {
+  background-color: #0044cc;
+}
+
+.btn-group.open .btn-warning.dropdown-toggle2 {
+  background-color: #f89406;
+}
+
+.btn-group.open .btn-danger.dropdown-toggle2 {
+  background-color: #bd362f;
+}
+
+.btn-group.open .btn-success.dropdown-toggle2 {
+  background-color: #51a351;
+}
+
+.btn-group.open .btn-info.dropdown-toggle2 {
+  background-color: #2f96b4;
+}
+
+.btn-group.open .btn-inverse.dropdown-toggle2 {
+  background-color: #222222;
+}
+
+.input-append .btn-group > .dropdown-toggle2,
+.input-prepend .btn-group > .dropdown-toggle2 {
+  vertical-align: top;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+}
+
+.input-append .btn-group:last-child > .dropdown-toggle2 {
+  -webkit-border-radius: 0 4px 4px 0;
+     -moz-border-radius: 0 4px 4px 0;
+          border-radius: 0 4px 4px 0;
+}
+
+
+.dropdown-toggle2 {
+  *margin-bottom: -3px;
+}
+
+.dropdown-toggle2:active,
+.open .dropdown-toggle2 {
+  outline: 0;
+}
+
+.btn-group > .dropdown-toggle2 {
+  -webkit-border-top-right-radius: 4px;
+          border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+}
+
+.btn-group > .large.dropdown-toggle2 {
+  -webkit-border-top-right-radius: 6px;
+          border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+          border-bottom-right-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  -moz-border-radius-bottomright: 6px;
+}
+
+.nav .dropdown-toggle2 .caret {
+  margin-top: 6px;
+  border-top-color: #0088cc;
+  border-bottom-color: #0088cc;
+}
+
+.nav .dropdown-toggle2:hover .caret,
+.nav .dropdown-toggle2:focus .caret {
+  border-top-color: #005580;
+  border-bottom-color: #005580;
+}
+
+.nav-tabs .dropdown-toggle2 .caret {
+  margin-top: 8px;
+}
+
+.nav .active .dropdown-toggle2 .caret {
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+}
+
+.nav-tabs .active .dropdown-toggle2 .caret {
+  border-top-color: #555555;
+  border-bottom-color: #555555;
+}
+
+
+.nav-tabs .open .dropdown-toggle2,
+.nav-pills .open .dropdown-toggle2,
+.nav > li.dropdown.open.active > a:hover,
+.nav > li.dropdown.open.active > a:focus {
+  color: #ffffff;
+  background-color: #999999;
+  border-color: #999999;
+}
+
+
+/* articlesのための自作タイトルバー */
+.ttl1{
+  margin:0;
+  padding:5px 10px;
+  border-bottom:1px solid #bababa;
+  font-size:110%;
+  color:#fff;
+  zoom: 1;
+}
+
+.ttl1{
+ -webkit-border-radius: 7px 7px 0 0;
+ -moz-border-radius: 7px 7px 0 0;
+ border-radius: 7px 7px 0 0;
+ background: #119de9;
+ background: -webkit-gradient(linear, left top, left bottom, from(#119de9),
+             to(#4bb8f3));
+ background: -moz-linear-gradient(top, #119de9, #4bb8f3);
+ background: -o-linear-gradient(top, #119de9, #4bb8f3);
+ background: -ms-linear-gradient(top, #119de9, #4bb8f3);
+ background: linear-gradient(top, #119de9, #4bb8f3);
+ filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr= '#119de9', endColorstr='#4bb8f3');
+ -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr= '#119de9', endColorstr='#4bb8f3')";
+ -pie-background: linear-gradient(top, #119de9, #4bb8f3);
+ behavior: url(PIE.htc);
+}
+
+/* テキストボックス */
+.box1 p,.box2 p{
+line-height:1.4;
+padding:0;
+margin:0;
+}
+
+.box1{
+padding:10px;
+color: #444;
+background:#fff;
+border:1px solid #cacaca;
+-webkit-border-radius: 7px;
+-moz-border-radius: 7px;
+border-radius: 7px;
+behavior: url(PIE.htc);
+}
+
+.box2{
+padding:10px;
+color: #444;
+background:#fff;
+border:1px solid #cacaca;
+-webkit-border-radius: 0 0 7px 7px;
+-moz-border-radius: 0 0 7px 7px;
+border-radius: 0 0 7px 7px;
+behavior: url(PIE.htc);
+}
+
+/* タイトルのスタイル */
+.txtbox_ttl1{
+margin:0;
+padding:5px 10px;
+font-size:110%;
+text-shadow: 0px 1px 0px #fff;
+color: #fcfcfc;
+border-top:1px solid #cacaca;
+border-left:1px solid #cacaca;
+border-right:1px solid #cacaca;
+border-bottom:2px solid #d6d4d3;
+-webkit-border-radius: 7px 7px 0 0; 
+-moz-border-radius: 7px 7px 0 0; 
+border-radius: 7px 7px 0 0; 
+-webkit-box-shadow: 0 -1px 1px #9e9b9a inset;
+-moz-box-shadow: 0 -1px 1px #9e9b9a inset;
+box-shadow: 0 -1px 1px #9e9b9a inset;
+background: #fcfcfc;
+background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#eaeaea));
+background: -moz-linear-gradient(top, #fcfcfc, #eaeaea);
+background: -o-linear-gradient(top, #fcfcfc, #eaeaea);
+background: -ms-linear-gradient(top, #fcfcfc, #eaeaea);
+background: linear-gradient(top, #fcfcfc, #eaeaea);
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fcfcfc', endColorstr='#eaeaea');
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#fcfcfc', endColorstr='#eaeaea)";
+-pie-background: linear-gradient(top, #fcfcfc, #eaeaea);
+behavior: url(PIE.htc);
+}
+.txtbox_ttl1{
+color: #e4016f;
+}
+
+
+/* articleのアブスト */
+.abst1{
+ font-style: italic;
+ margin: 1em;
+ color: #aaaaaa;
+}
+
+/* entryに区切り線引きたい 
+.entry1{
+border: 2px #dcdcdc;
+border-top-style: solid;
+margin-top: 2em;
+}
+*/
+
+/* entryを３分割 */
+.entries{
+moz-column-count: 3;
+-webkit-column-count: 3;
+column-count:3;
+}
+
+.entry01{
+-moz-column-break-after: always;
+-webkit-column-break-after: always;
+break-after: column;
+}
+
+
+/* articleの本文 */
+.content1{
+ margin: 2em;
+}
+h22 {
+  font-size: 1.1em;
+}
+
+/* メモ帳のようなテキストボックス */
+.note, .note:before, .note:after {
+background-color: #eee9b5;
+background-image:-webkit-linear-gradient(#cfcba2 1px, transparent 1px);
+background-image:-moz-linear-gradient(#cfcba2 1px, transparent 1px);
+background-image:-o-linear-gradient(#cfcba2 1px, transparent 1px);
+background-image:linear-gradient(#cfcba2 1px, transparent 1px);
+background-size: 24px 24px;
+background-repeat: repeat;
+background-position:0 50px;
+border-radius: 3px;
+-webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 0 4px rgba(0, 0, 0, 0.5);
+box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15), 0 0 4px rgba(0, 0, 0, 0.5);
+}
+.note {
+position: relative;
+margin: 60px auto;
+padding: 0 23px 14px;
+width: 300px;
+line-height: 24px;
+font-size: 12px;
+color: #666;
+}
+.note p {
+margin-bottom: 24px;
+}
+.note :last-child {
+margin-bottom: 0;
+}
+.note:before, .note:after {
+content: '';
+position: absolute;
+z-index: -1;
+top: 100%;
+left: 3px;
+right: 3px;
+margin-top: -2px;
+height: 4px;
+background-size: 1px 1px, 1px 1px, 0 0;
+}
+.note:before {
+z-index: -2;
+left: 6px;
+right: 6px;
+height: 6px;
+background-color: #eee;
+}
+
+.ttl {
+position: relative;
+margin: 0 -23px 14px;
+height: 40px;
+background: #14466a;
+border-radius: 3px 3px 0 0;
+background-image: -webkit-linear-gradient(top, #a87a68, #5d423b);
+background-image: -moz-linear-gradient(top, #a87a68, #5d423b);
+background-image: -o-linear-gradient(top, #a87a68, #5d423b);
+background-image: linear-gradient(to bottom, #a87a68, #5d423b);
+-webkit-box-shadow: inset 0 1px #2f81ad, 0 2px 1px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.5), 0 1px black;
+box-shadow: inset 0 1px #c19983, 0 2px 1px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 0, 0, 0.5), 0 1px black;
+}
+.ttl > h1 {
+line-height: 38px;
+font-size: 14px;
+color: #ffffff;
+text-align: center;
+text-shadow: 0 -1px rgba(0, 0, 0, 0.7);
+}
+.ttl:before, .ttl:after {
+content: '';
+position: absolute;
+bottom: 2px;
+left: 1px;
+right: 1px;
+height: 0;
+border-top: 1px dashed #617c90;
+border-color: rgba(255, 255, 255, 0.35);
+}
+.ttl:after {
+bottom: 3px;
+border-color: #cfcba2;
+border-color: rgba(0, 0, 0, 0.5);
+}
+

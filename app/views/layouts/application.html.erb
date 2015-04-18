@@ -9,6 +9,7 @@
     <%= render 'layouts/shim' %>
   </head>
   <body>
+<!--   <div class="inner-body"> -->
     <%= render 'layouts/header' %>
     <div class="container">
      <% flash.each do |key, value| %>
@@ -18,5 +19,6 @@
       <%= render 'layouts/footer' %> 
       <%= debug(params) if Rails.env.development? %>
     </div>
+<!--   </div> -->
   </body>
 </html>
