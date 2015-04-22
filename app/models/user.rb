@@ -4,11 +4,12 @@ class User < ActiveRecord::Base
   has_many :microposts, dependent: :destroy
   has_one  :profile,    dependent: :destroy
   has_one  :subemail,    dependent: :destroy
+  has_many :tokens, dependent: :destroy
 
   before_save { self.email = email.downcase }
   before_create :create_remember_token
   validates :name, presence: true, length: { maximum: 50 }
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]*kyoto-u.ac.jp\z/i
   validates :email, presence:   true,
                     format:     { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }

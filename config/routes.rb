@@ -1,5 +1,9 @@
 SampleApp::Application.routes.draw do
-  resources :users
+  resources :users do
+   collection do
+    get :tmp
+   end
+  end
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts
   resources :entries
@@ -18,6 +22,7 @@ SampleApp::Application.routes.draw do
   match '/about',    to: 'static_pages#about',    via: 'get'
   match '/contact',  to: 'static_pages#contact',  via: 'get'
   match '/mypage',   to: 'static_pages#mypage',   via: 'get'
+  get 'users/token/:uuid' => 'users#token'
   # The priority is based upon order of creation: first created -> highest priority.
 
   # See how all your routes lay out with "rake routes".

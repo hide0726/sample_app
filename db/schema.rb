@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150418144002) do
+ActiveRecord::Schema.define(version: 20150422110652) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20150418144002) do
     t.datetime "updated_at"
     t.text     "content"
   end
+
+  add_index "comments", ["created_at"], name: "index_comments_on_created_at"
 
   create_table "entries", force: true do |t|
     t.integer  "user_id"
@@ -96,6 +98,16 @@ ActiveRecord::Schema.define(version: 20150418144002) do
     t.datetime "updated_at"
   end
 
+  create_table "tokens", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.string   "uuid",       null: false
+    t.datetime "expired_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tokens", ["user_id"], name: "index_tokens_on_user_id"
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -104,6 +116,7 @@ ActiveRecord::Schema.define(version: 20150418144002) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",           default: false
+    t.boolean  "created",         default: false
   end
 
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
