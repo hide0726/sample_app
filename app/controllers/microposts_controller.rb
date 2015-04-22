@@ -12,6 +12,11 @@ class MicropostsController < ApplicationController
       render 'static_pages/home'
     end
   end
+  
+  def edit
+   @micropost = Micropost.find(params[:id])
+  end
+
 
   def update
    @micropost = Micropost.find(params[:id])
