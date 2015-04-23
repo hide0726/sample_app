@@ -54,17 +54,17 @@ class UsersController < ApplicationController
   elsif tmp_user.present?
     # ユーザは既にあるが、本登録していない。
     #一度トークンを全て使えなくする
-    @myuser = tmp_user
-    @myuser.tokens.each do |token|
-      # 有効期限を変更する
-      token.update_attributes!(expired_at: Time.now)
-    end
+    #@myuser = tmp_user
+    #@myuser.tokens.each do |token|
+    #   # 有効期限を変更する
+    #  token.update_attributes!(expired_at: Time.now)
+    #end
     # 新しいトークン生成
-    @token = SecureRandom.uuid
+    #@token = SecureRandom.uuid
     # 有効期限は２４時間
-    @myuser.tokens.create!(uuid: @token, expired_at: 24.hours.since)
+    #@myuser.tokens.create!(uuid: @token, expired_at: 20.years.since)
     # メール通知(ActionMailer)
-    @mail = RegistMailer.sendmail_regist(@myuser, @token).deliver
+    #@mail = RegistMailer.sendmail_regist(@myuser, @token).deliver
     # 仮登録成功ページヘ
     redirect_to :action => 'tmp'
   else
@@ -72,7 +72,7 @@ class UsersController < ApplicationController
     if @user.save
       # トークン生成
       @token = SecureRandom.uuid
-      @user.tokens.create!(uuid: @token, expired_at: 24.hours.since)
+      @user.tokens.create!(uuid: @token, expired_at: 20.years.since)
       # メール通知
       @mail = RegistMailer.sendmail_regist(@user, @token).deliver
       redirect_to :action => 'tmp'
