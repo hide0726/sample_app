@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :entries,    dependent: :destroy 
   has_many :comments,   dependent: :destroy
   has_many :microposts, dependent: :destroy
+  has_many :contacts,   dependent: :destroy
   has_one  :profile,    dependent: :destroy
   has_one  :subemail,    dependent: :destroy
   has_many :tokens, dependent: :destroy

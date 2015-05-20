@@ -229,6 +229,10 @@ aside {
 
 /* 自分で編集したnavbar-inverse2 */
 
+.navbar-inverse2 .nav > .active > a > [class^="icon-"],
+.navbar-inverse2 .nav > .active > a > [class*=" icon-"],
+
+
 .navbar-inverse2 .navbar-inner {
   background-color: #00CCFF;
   background-image: -moz-linear-gradient(top, #00CCFF, #66CCFF);
@@ -262,6 +266,60 @@ aside {
   color: #ffffff;
 }
 
+.navbar-inverse2 .nav > li > a:focus,
+.navbar-inverse2 .nav > li > a:hover {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+.navbar-inverse2 .nav .active > a,
+.navbar-inverse2 .nav .active > a:hover,
+.navbar-inverse2 .nav .active > a:focus {
+  color: #ffffff;
+  background-color: #111111;
+}
+
+.navbar-inverse2 .navbar-link {
+  color: #999999;
+}
+
+.navbar-inverse2 .navbar-link:hover,
+.navbar-inverse2 .navbar-link:focus {
+  color: #ffffff;
+}
+
+.navbar-inverse2 .divider-vertical {
+  border-right-color: #222222;
+  border-left-color: #111111;
+}
+
+.navbar-inverse2 .nav li.dropdown.open > .dropdown-toggle,
+.navbar-inverse2 .nav li.dropdown.active > .dropdown-toggle,
+.navbar-inverse2 .nav li.dropdown.open.active > .dropdown-toggle {
+  color: #ffffff;
+  background-color: #111111;
+}
+
+.navbar-inverse2 .nav li.dropdown > .dropdown-toggle .caret {
+  border-top-color: #999999;
+  border-bottom-color: #999999;
+}
+
+
+.navbar-inverse2 .navbar-search .search-query {
+  color: #ffffff;
+  background-color: #515151;
+  border-color: #111111;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15);
+     -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0 rgba(255, 255, 255, 0.15);
+  -webkit-transition: none;
+     -moz-transition: none;
+       -o-transition: none;
+          transition: none;
+}
+
+
 .navbar-inverse2 .navbar-search .search-query:-moz-placeholder {
   color: #99ccff;
 }
@@ -273,6 +331,55 @@ aside {
 .navbar-inverse2 .navbar-search .search-query::-webkit-input-placeholder {
   color: #99ccff;
 }
+
+.navbar-inverse2 .navbar-search .search-query:focus,
+.navbar-inverse2 .navbar-search .search-query.focused {
+  padding: 5px 15px;
+  color: #333333;
+  text-shadow: 0 1px 0 #ffffff;
+  background-color: #ffffff;
+  border: 0;
+  outline: 0;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+     -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-inverse2 .btn-navbar {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #0e0e0e;
+  *background-color: #040404;
+  background-image: -moz-linear-gradient(top, #151515, #040404);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#151515), to(#040404));
+  background-image: -webkit-linear-gradient(top, #151515, #040404);
+  background-image: -o-linear-gradient(top, #151515, #040404);
+  background-image: linear-gradient(to bottom, #151515, #040404);
+  background-repeat: repeat-x;
+  border-color: #040404 #040404 #000000;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff151515', endColorstr='#ff040404', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.navbar-inverse2 .btn-navbar:hover,
+.navbar-inverse2 .btn-navbar:focus,
+.navbar-inverse2 .btn-navbar:active,
+.navbar-inverse2 .btn-navbar.active,
+.navbar-inverse2 .btn-navbar.disabled,
+.navbar-inverse2 .btn-navbar[disabled] {
+  color: #ffffff;
+  background-color: #040404;
+  *background-color: #000000;
+}
+
+.navbar-inverse2 .btn-navbar:active,
+.navbar-inverse2 .btn-navbar.active {
+  background-color: #000000 \9;
+}
+
+
+
 
 /* 自分で編集したdropdown-toggle2 */
 

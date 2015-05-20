@@ -1,0 +1,18 @@
+管理者宛に連絡・報告・ご要望などがあればどうぞ。
+
+
+ <div class="row">
+  <div class="span6 offset3">
+     <%= form_for(@contact) do |f| %>
+     <%= render 'shared/error_messages', object: f.object %> 
+
+     <%= f.label :name, "名前(任意入力)" %>
+     <%= f.text_field :name %>
+
+     <%= f.label :content, "メッセージ" %>
+     <%= f.text_area :content %>
+
+     <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+ </div>

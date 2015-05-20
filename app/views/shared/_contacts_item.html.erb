@@ -1,0 +1,24 @@
+<li id="<%= contacts_item.id %>">
+  <% if contacts_item.user_id.present? %>
+   <%= link_to gravatar_for(contacts_item.user), contacts_item.user %>
+   <span class="user">
+    <%= link_to contacts_item.user.name, contacts_item.user %>
+    <%= contacts_item.name if contacts_item.name.present? %>
+   </span>
+  <% else %> 
+   <span class="user">
+    <% if contacts_item.name.present? %>
+     <%= contacts_item.name %>
+    <% else %>   
+     非ログインユーザー
+    <% end %>
+　 </span> 
+  <% end %>
+   <span class="content">
+    <%= contacts_item.content %>
+   </span>
+   <span class="timestamp">
+    Posted <%= time_ago_in_words(contacts_item.created_at) %> ago.
+   </span>
+</li>
+

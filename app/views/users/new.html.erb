@@ -1,21 +1,21 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<h1>アカウント無料登録</h1>
 
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
      <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name %>
+      <%= f.label :name, "ユーザー名(本名推奨)" %>
       <%= f.text_field :name %>
 
-      <%= f.label :email %>
+      <%= f.label :email, "アドレス(京都大学のアカウントのみ利用可能)" %>
       <%= f.text_field :email %>
 
-      <%= f.label :password %>
+      <%= f.label :password, "パスワード(6文字以上)" %>
       <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label :password_confirmation, "パスワード確認" %>
       <%= f.password_field :password_confirmation %>
 
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
