@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-before_action :signed_in_user, only: [:bbs]
+before_action :signed_in_user, only: [:mypage, :bbs]
 
 
   def home
@@ -31,6 +31,7 @@ before_action :signed_in_user, only: [:bbs]
     @microposts = @user.microposts.paginate(page: params[:page])
     @profile = @user.profile
     @sub_email = @user.subemail
+    @inform = @user.subemail.inform
   end
 
   private

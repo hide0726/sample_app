@@ -6,6 +6,7 @@ class RegistMailer < ActionMailer::Base
   #
   #   en.regist_mailer.sendmail_regist.subject
   #
+
   def sendmail_regist(user, token)
     @token = token
     mail(:to => user.email,

@@ -21,9 +21,14 @@
       <%= f.label :koukai %>
       <%= f.select :koukai,
           [['下書き', 0], ['公開', 1]]  %>
+
       <%= f.label :gentei %>
       <%= f.select :gentei,
           [['通常公開', 0], ['会員限定', 1]]  %>
+
+      <%= f.label :send_mail, '通知メール' %>
+      <%= f.select :send_mail,
+          [['送信しない', 0], ['送信する', 1]] %>
 
       <%= f.submit "Post", class: "btn btn-large btn-primary" %>
     <% end %>

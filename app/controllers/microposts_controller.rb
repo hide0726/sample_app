@@ -7,6 +7,10 @@ class MicropostsController < ApplicationController
     if @micropost.save
       flash[:success] = "Micropost created!"
       redirect_to root_url
+      users = User.all
+      users.each do |user|
+       PostMailer.bbs_post_email(current_user, user, @micropost).deliver
+      end
     else
       @feed_items = []
       render 'static_pages/home'

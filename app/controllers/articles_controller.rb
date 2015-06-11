@@ -15,6 +15,12 @@ class ArticlesController < ApplicationController
   if @article.save
    flash[:success] = "Article created!"
    redirect_to @article
+   if @article.koukai == 1 && @article.send_mail == 1
+    users = User.all
+    users.each do |user| 
+     PostMailer.post_email(user, @article).deliver
+    end
+   end
   else
    render 'new'
   end
@@ -35,6 +41,12 @@ class ArticlesController < ApplicationController
   if @article.update_attributes(article_params)
    flash[:success] = "Article updated!"
    redirect_to @article
+   if @article.koukai == 1 && @article.send_mail == 1 
+    users = User.all
+    users.each do |user| 
+     PostMailer.post_email(user, @article).deliver
+    end
+   end
   else
    render 'edit'
   end
@@ -55,7 +67,7 @@ class ArticlesController < ApplicationController
  private
 
  def article_params
-  params.require(:article).permit(:title, :abstract, :content, :category_id, :koukai, :gentei)
+  params.require(:article).permit(:title, :abstract, :content, :category_id, :koukai, :gentei, :send_mail)
  end
 
  def admin_user

@@ -3,8 +3,14 @@
     <%= form_for(@sub_email) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :sub_email %>
+      <%= f.label :sub_email, "サブアドレス"  %>
       <%= f.text_field :sub_email %>
+
+      <%= f.label :inform, '通知(新着記事・BBSへの投稿)'  %>
+      <%= f.select :inform,
+           [['京大アカウントに通知', 1],
+            ['サブアドレスに通知', 2],
+            ['通知しない', 3 ]]  %>
 
       <%= f.submit "登録", class: "btn btn-large btn-primary" %>
     <% end %>

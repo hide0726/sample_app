@@ -43,7 +43,7 @@ class SubemailsController < ApplicationController
 private
 
   def sub_email_params
-    params.require(:subemail).permit(:sub_email)
+    params.require(:subemail).permit(:sub_email, :inform)
   end
 
 
