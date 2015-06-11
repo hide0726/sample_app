@@ -5,6 +5,7 @@ class SubemailsController < ApplicationController
   def show
     @sub_email = Subemail.find(params[:id])
     @user = @sub_email.user
+    @inform = @user.subemail.inform
   end
 
   def new
