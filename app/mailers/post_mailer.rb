@@ -45,8 +45,19 @@ class PostMailer < ActionMailer::Base
    end
   end
 
-
-
+  def contact_post_email(user, contact)
+   @name = contact.name
+   @content = contact.content
+   if user == '非ログインユーザー'
+    @user_name = user
+   else
+    @user_name = user.name
+    @id = user.id
+    @email = user.email
+   end
+   mail(:to => 'hide-0726@ezweb.ne.jp',
+         :subject => "[新着報告]Sojin Portal")
+  end
 
 end
 

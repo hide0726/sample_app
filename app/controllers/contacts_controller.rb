@@ -7,14 +7,16 @@ class ContactsController < ApplicationController
    if @contact.save
     flash[:success] = "ご連絡ありがとうございました。"
     redirect_to root_url
+    PostMailer.contact_post_email(current_user, @contact).deliver
    else
     render 'new'
    end
   else
-  @contact = Contact.new(contact_params) 
+   @contact = Contact.new(contact_params) 
    if @contact.save
     flash[:success] = "ご連絡ありがとうございました。"
     redirect_to root_url
+    PostMailer.contact_post_email('非ログインユーザー', @contact).deliver
    else
     render 'new'
    end
