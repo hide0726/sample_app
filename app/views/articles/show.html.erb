@@ -1,4 +1,4 @@
-<% if @article.koukai == 1 or current_user.admin?  %>
+<% if @article.koukai == 1 %>
   <% if (@article.gentei == 1) && !signed_in?  %>
    <% session[:return_to] = request.original_url %>
    <h4>こちらはユーザー限定公開記事です。
@@ -7,8 +7,13 @@
    <h2 class="ttl1"><%= @article.title %></h2>
    <div class="box2">
    <h2 class="abst1"><%= @article.abstract %></h2>
+   <% if @article.image? %>
+      <div class="thumbnail">
+      <%= image_tag @article.image.url %>
+      </div>
+   <% end %>
    <h22 class="content1">
-   <%= simple_format(h(@article.content)) %>
+   <%= simple_format(@article.content) %>
    </h22>
    <p>
     <% case %>
@@ -28,7 +33,35 @@
     <% end %>
   <% end %>
 <% else %>
- <div class="hero-unit">
- <h3>この記事は非公開です。</h3>
- </div>
+ <% if signed_in? && current_user.admin? %>
+  <h2 class="ttl1"><%= @article.title %></h2>
+  <div class="box2">
+   <h2 class="abst1"><%= @article.abstract %></h2>
+   <% if @article.image? %>
+    <div class="thumbnail">
+      <%= image_tag @article.image.url %>
+    </div>
+   <% end %>
+   <h22 class="content1">
+   <%= simple_format(@article.content) %>
+   </h22>
+   <p>
+   <% case %>
+    <% when @article.category_id == 1 %>
+     <%= link_to "#一回生向け", '/categories/1' %>
+    <% when @article.category_id == 2 %>
+     <%= link_to "#Sojin Voice", '/categories/2' %>
+    <% else @article.category_id == 3 %>
+     <%= link_to "#その他", '/categories/3' %>
+    <% end %>
+   </p>
+   <%= link_to "edit", edit_article_path(params[:id]) %>
+     <%= link_to "delete", @article, method: :delete,
+                      data: {confirm: "You sure?"} %>
+  </div> 
+ <% else %>
+  <div class="hero-unit">
+  <h3>この記事は非公開です。</h3>
+  </div>
+ <% end %>
 <% end %>

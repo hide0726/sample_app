@@ -67,7 +67,7 @@ class ArticlesController < ApplicationController
  private
 
  def article_params
-  params.require(:article).permit(:title, :abstract, :content, :category_id, :koukai, :gentei, :send_mail)
+  params.require(:article).permit(:title, :abstract, :content, :category_id, :koukai, :gentei, :send_mail, :image, :image_cache, :remove_image)
  end
 
  def admin_user

@@ -6,5 +6,11 @@ module ApplicationHelper
     else
       "#{base_title} | #{page_title}"
     end
-  end
+ end
+ 
+ def br(str) 
+ #http://qiita.com/t_oginogin/items/0164ad76b753fdff9902 参照
+  html_escape(str).gsub(/\r\n|\r|\n/, "<br />").html_safe 
+ end 
+
 end
