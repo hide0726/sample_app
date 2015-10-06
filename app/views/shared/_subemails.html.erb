@@ -6,16 +6,18 @@
   <p>記事・BBSの通知：京大アカウントに通知</p>
   <%= link_to "edit", new_subemail_path %>
  <% else %>
-  <p>サブアドレス：<%= @sub_email.sub_email if @sub_email.present? %></p>
-  <p>記事・BBSの通知：
-  <% case %>
-  <% when @inform == 1 %>
-  京大アカウントに通知
-  <% when @inform == 2 %> 
-  サブアドレスに通知
-  <% when @inform == 3 %>
-  通知しない   
-  <% end %> </p>
+  <p>サブアドレス：<%= @sub_email.sub_email %></p>
+   <p>記事・BBSの通知：
+   <% case %>
+   <% when @inform.nil? %>
+   京大アカウントに通知
+   <% when @inform == 1 %>
+   京大アカウントに通知
+   <% when @inform == 2 %> 
+   サブアドレスに通知
+   <% when @inform == 3 %>
+   通知しない   
+   <% end %> </p>
   <p>
   <% if current_user?(@user) %>
    <%= link_to "edit", edit_subemail_path(id: @user.subemail) %>
