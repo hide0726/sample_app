@@ -1,4 +1,7 @@
 <li id="<%= articles_item.id %>">
+ <% if articles_item.koukai == 0 %>
+  <span class="content">[下書き]</span>
+ <% end %>
  <span class="content"><%= articles_item.title %></span>
  <span class="content"><%= articles_item.abstract %></span>
  <%= link_to "続きを読む", articles_item %></span>

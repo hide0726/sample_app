@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150611074601) do
+ActiveRecord::Schema.define(version: 20160111062204) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 20150611074601) do
     t.datetime "updated_at"
     t.string   "image"
     t.integer  "send_mail"
+    t.text     "content2"
+    t.text     "content3"
+    t.text     "content4"
   end
 
   add_index "articles", ["category_id", "koukai", "created_at"], name: "index_articles_on_category_id_and_koukai_and_created_at"

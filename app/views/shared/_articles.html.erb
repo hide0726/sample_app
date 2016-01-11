@@ -1,6 +1,15 @@
-<% if @articles.any? %>
+<% if signed_in? && current_user.admin? %> 
+ <% if @articles.any? %>
   <ol class="microposts">
     <%= render partial: 'shared/articles_item', collection: @articles %>
   </ol>
   <%= will_paginate @articles %>
+ <% end %>
+<% else %>
+ <% if @public_articles.any? %>
+  <ol class="microposts">
+    <%= render partial: 'shared/articles_item', collection: @public_articles %>
+  </ol>
+  <%= will_paginate @public_articles %>
+ <% end %>
 <% end %>

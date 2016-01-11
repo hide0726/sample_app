@@ -6,7 +6,7 @@
   <p>記事・BBSの通知：京大アカウントに通知</p>
   <%= link_to "edit", new_subemail_path %>
  <% else %>
-  <p>サブアドレス：<%= @sub_email.sub_email %></p>
+  <p>サブアドレス：<%= @sub_email.sub_email if @sub_email.sub_email.presented? %></p>
    <p>記事・BBSの通知：
    <% case %>
    <% when @inform.nil? %>

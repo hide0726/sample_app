@@ -34,6 +34,17 @@ class ArticlesController < ApplicationController
 
  def show
   @article = Article.find(params[:id])
+  case 
+   when @article.content4.present?
+    @all_contents = [@article.content, @article.content2, @article.content3, @article.content4]
+   when @article.content3.present?
+    @all_contents = [@article.content, @article.content2, @article.content3]
+   when @article.content2.present?
+    @all_contents = [@article.content, @article.content2]
+   else
+    @all_contents = [@article.content]
+  end
+  @paginated_content = @all_contents.paginate(page: params[:page], per_page: 1)
  end
 
  def update
@@ -53,7 +64,8 @@ class ArticlesController < ApplicationController
  end
 
  def index
-  @articles = Article.where(koukai: 1).paginate(page: params[:page])
+  @public_articles = Article.where(koukai: 1).paginate(page: params[:page])
+  @articles = Article.paginate(page: params[:page])
  end
 
  
@@ -67,7 +79,7 @@ class ArticlesController < ApplicationController
  private
 
  def article_params
-  params.require(:article).permit(:title, :abstract, :content, :category_id, :koukai, :gentei, :send_mail, :image, :image_cache, :remove_image)
+  params.require(:article).permit(:title, :abstract, :content, :content2, :content3, :content4, :category_id, :koukai, :gentei, :send_mail, :image, :image_cache, :remove_image)
  end
 
  def admin_user
