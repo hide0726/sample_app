@@ -44,7 +44,7 @@
     </div>
    <% end %>
    <h22 class="content1">
-   <%= simple_format(@paginated_content) %>
+   <%= simple_format(@paginated_content.first) %>
    </h22>
    <%= will_paginate @paginated_content %>
    <p>
