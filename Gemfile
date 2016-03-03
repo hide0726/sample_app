@@ -12,7 +12,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'carrierwave'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.8'
+  gem 'sqlite3', '1.3.11'
   gem 'rspec-rails', '2.13.1'
 end
 
